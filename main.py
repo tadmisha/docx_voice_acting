@@ -18,7 +18,10 @@ def result_path_is_ok(path: str) -> bool:
     else: print('File path is not exists')
     return False
     
-def read_docx(path: str) -> str: pass
+def read_docx(path: str) -> str:
+    doc = Document(r'C:/Users/Misha/Downloads/Labirint.docx')
+    text = '\n'.join(paragraph.text for paragraph in doc.paragraphs)  # read text from every paragraph
+    return text
 
 def voice_act(text: str, result_path: str): pass
 
